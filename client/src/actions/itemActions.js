@@ -13,20 +13,26 @@ export const getItems = () => dispatch => {
         .catch(err => console.log(err));
 }
 
-export const addItem = (item) => {
+export const addItem = (item) => dispatch => {
     // GET SOME STUFF TO SEND AS A PAYLOAD
-    return {
-        type: ADD_ITEM,
-        payload: item
-    }
+    axios
+        .post('/api/items', item)
+        .then(res => dispatch({
+            type: ADD_ITEM,
+            payload: res.data
+        }))
+        .catch(err => console.log(err))
 }
 
-export const deleteItem = (id) => {
+export const deleteItem = (id) => dispatch => {
     // GET SOME STUFF TO SEND AS A PAYLOAD
-    return {
-        type: DELETE_ITEM,
-        payload: id
-    }
+    axios
+        .delete(`/api/items/${id}`)
+        .then(res => dispatch({
+            type: DELETE_ITEM,
+            payload: id
+        }))
+        .catch()
 }
 
 export const setItemsLoading = () => {

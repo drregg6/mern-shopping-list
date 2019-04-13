@@ -19,7 +19,7 @@ export default function(state = initState, action) {
             // DO SOME STUFF TO CHANGE THE STATE
             return {
                 ...state,
-                items: state.items.filter(item => item.id !== action.payload)
+                items: state.items.filter(item => item._id !== action.payload)
             }
 
         case ADD_ITEM:
