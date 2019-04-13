@@ -16,8 +16,20 @@ export default function(state = initState, action) {
         case GET_ITEMS:
             // DO SOME STUFF TO CHANGE THE STATE
             return { ...state }
-        default:
+        case DELETE_ITEM:
             // DO SOME STUFF TO CHANGE THE STATE
+            return {
+                ...state,
+                items: state.items.filter(item => item.id !== action.payload)
+            }
+
+        case ADD_ITEM:
+            let newItems = [...state.items, action.payload];
+            return {
+                ...state,
+                item: newItems
+            }
+        default:
             return state;
     }
 }
