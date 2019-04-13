@@ -7,19 +7,17 @@ const initState = {
         { id: uuid(), name: 'Eggs' },
         { id: uuid(), name: 'Milk' },
         { id: uuid(), name: 'Steak' },
-        { id: uuid(), name: 'Water' }
+        { id: uuid(), name: 'Naan' }
     ]
 };
 
 export default function(state = initState, action) {
     switch(action.type) {
         case GET_ITEMS:
+            // DO SOME STUFF TO CHANGE THE STATE
             return { ...state }
-        case ADD_ITEM:
-            return {
-                items: [...state, action.payload];
-            }
         default:
+            // DO SOME STUFF TO CHANGE THE STATE
             return state;
     }
 }
