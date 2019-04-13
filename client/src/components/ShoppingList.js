@@ -10,7 +10,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 // redux
 import { connect } from 'react-redux';
-import { getItems, deleteItem, addItem } from '../actions/itemActions';
+import { getItems, deleteItem } from '../actions/itemActions';
 
 class ShoppingList extends Component {
     componentDidMount() {
@@ -57,7 +57,6 @@ class ShoppingList extends Component {
 ShoppingList.propTypes = {
     getItems: PropTypes.func.isRequired,
     deleteItem: PropTypes.func.isRequired,
-    addItem: PropTypes.func.isRequired,
     item: PropTypes.object.isRequired
 }
 
@@ -77,7 +76,6 @@ export default connect(
     mapStateToProps,
     {
         getItems,
-        deleteItem,
-        addItem
+        deleteItem
     }
 )(ShoppingList);
