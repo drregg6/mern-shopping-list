@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 const db = require('./config/keys').mongoURI;
 
 // Connect to Mongo
-mongoose.connect(db, { useNewUrlParser: true })
+mongoose.connect(`mongodb+srv://${process.env.MONGOUSER}:${process.env.MONGOPASSWORD}@cluster0-4ndmy.mongodb.net/test?retryWrites=true`, { useNewUrlParser: true })
     .then(() => console.log('MongoDB connected!'))
     .catch(error => console.error(error));
 
