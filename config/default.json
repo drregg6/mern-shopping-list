@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://dave:dave123@cluster0-4ndmy.mongodb.net/test?retryWrites=true&authSource=admin&replicaSet=xyz",
+  "jwtSecret": "random_access_secret"
+}
